@@ -22,8 +22,8 @@ it("displays correct heading when navigating to shows route", () => {
 });
 
 it("displays correct band name for band route that existed at build time", () => {
-  cy.task("db:reset").visit("/bands/51100");
-  cy.findByRole("heading", { name: /The Blue Face Society/i }).should("exist");
+  cy.task("db:reset").visit("/bands/1");
+  cy.findByRole("heading", { name: /Shamrock Pete/i }).should("exist");
 });
 
 it("displays error for band not in db", () => {
@@ -36,6 +36,5 @@ it("displays name for band that was not present at build time", () => {
   const newBand = generateNewBand(bandId);
 
   cy.task("db:reset").task("addBand", newBand).visit(`/bands/${bandId}`);
-  cy.wait(100).visit(`/bands/${bandId}`);
-  cy.findByRole("heading", { name: /Avalanche of Cheese/i}).should("exist")
+  cy.findByRole("heading", { name: /Avalanche of Cheese/i}).should("exist");
 })
