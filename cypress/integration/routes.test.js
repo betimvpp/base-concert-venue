@@ -35,6 +35,7 @@ it("displays name for band that was not present at build time", () => {
   const bandId = generateRandomId();
   const newBand = generateNewBand(bandId);
 
-  cy.task("db:reset").task("addBand", newBand).visit(`/bands/${bandId}`);
-  cy.findByRole("heading", { name: /Avalanche of Cheese/i}).should("exist");
+  cy.task('db:reset').task('addBand', newBand);
+  cy.wait(1000).visit(`/bands/${bandId}`);
+  cy.findByRole('heading', { name: /Avalanche of Cheese/i }).should('exist');
 })
