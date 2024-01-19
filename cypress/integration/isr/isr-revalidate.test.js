@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
-import { generateNewBand } from "../../__tests__/__mocks__/fakeData/newBand";
-import { generateRandomId } from "../../lib/features/reservations/utils";
+import { generateNewBand } from "../../../__tests__/__mocks__/fakeData/newBand";
+import { generateRandomId } from "../../../lib/features/reservations/utils";
 
 it("should load refreshed page from cache after new band is added", () => {
   cy.task("db:reset").visit("/bands");

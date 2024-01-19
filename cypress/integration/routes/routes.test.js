@@ -6,8 +6,8 @@
 /* eslint-disable no-sequences */
 /* eslint-disable no-constant-condition */
 /* eslint-disable prettier/prettier */
-import { generateNewBand } from "../../__tests__/__mocks__/fakeData/newBand"
-import { generateRandomId } from "../../lib/features/reservations/utils"
+import { generateNewBand } from "../../../__tests__/__mocks__/fakeData/newBand"
+import { generateRandomId } from "../../../lib/features/reservations/utils"
 
 it("displays correct heading when navigating to shows route", () => {
   cy.visit("/");
